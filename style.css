@@ -40,16 +40,6 @@ body {
     0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
-/* Adjusting the wrapper height for mobile and tablet devices */
-@media (max-width: 767px) {
-  .wrapper {
-    width: 100%;
-    height: auto;
-    font-size: 12px;
-    bottom: 30px;
-    /* Rest of your styles for mobile devices... */
-  }
-}
 .wrapper.active {
   height: 530px;
 }
@@ -127,6 +117,7 @@ header p {
 
 /* for logo */
 .logo {
+  max-width: 100%;
   position: absolute;
   top: 20px;
   /* Adjust the value as needed */
