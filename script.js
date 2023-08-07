@@ -1,12 +1,12 @@
 const wrapper = document.querySelector(".wrapper"),
-qrInput = wrapper.querySelector(".form input"),
-generateBtn = wrapper.querySelector(".form button"),
-qrImg = wrapper.querySelector(".qr-code img");
+    qrInput = wrapper.querySelector(".form input"),
+    generateBtn = wrapper.querySelector(".form button"),
+    qrImg = wrapper.querySelector(".qr-code img");
 let preValue;
 
 generateBtn.addEventListener("click", () => {
     let qrValue = qrInput.value.trim();
-    if(!qrValue || preValue === qrValue) return;
+    if (!qrValue || preValue === qrValue) return;
     preValue = qrValue;
     generateBtn.innerText = "Generating QR Code...";
     qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
@@ -17,8 +17,15 @@ generateBtn.addEventListener("click", () => {
 });
 
 qrInput.addEventListener("keyup", () => {
-    if(!qrInput.value.trim()) {
+    if (!qrInput.value.trim()) {
         wrapper.classList.remove("active");
         preValue = "";
     }
 });
+
+// Disable body scrolling on touch devices
+function preventBodyScroll(event) {
+    event.preventDefault();
+}
+
+document.body.addEventListener("touchmove", preventBodyScroll, { passive: false });
