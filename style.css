@@ -16,6 +16,7 @@ body {
   background: #10110F;
   /* background-image: linear-gradient(to right, #8360c3, #2ebf91); */
   justify-content: center;
+  overflow: hidden;
 }
 
 ::selection {
@@ -25,6 +26,7 @@ body {
 
 .wrapper {
   max-width: 410px;
+  /* position: fixed; */
   height: 265px;
   max-width: 410px;
   background: #FDFFF5;
